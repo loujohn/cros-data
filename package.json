@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "./node_modules/rollup/dist/bin/rollup -c ./build/rollup.config.js --environment NODE_ENV:prod",
-    "dev": "./node_modules/rollup/dist/bin/rollup --watch -c ./build/rollup.config.js --environment NODE_ENV:development"
+    "dev": "./node_modules/rollup/dist/bin/rollup --watch -c ./build/rollup.config.js --environment NODE_ENV:development",
+    "docs": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
@@ -32,7 +34,8 @@
     "rollup-plugin-terser": "^5.1.2",
     "rollup-plugin-typescript": "^1.0.1",
     "tslib": "^1.10.0",
-    "typescript": "^3.6.4"
+    "typescript": "^3.6.4",
+    "vuepress": "^1.2.0"
   },
   "dependencies": {
     "@babel/polyfill": "^7.6.0"
