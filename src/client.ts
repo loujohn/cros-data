@@ -22,9 +22,11 @@ export class Client {
       if (res.status) {
         if (evt.origin === this.origin) {
           this.cbs[res.messageId].reslove(res.data);
+          delete this.cbs[res.messageId];
         }
       } else {
         this.cbs[res.messageId].reject(res.error);
+        delete this.cbs[res.messageId];
       }
     });
   }

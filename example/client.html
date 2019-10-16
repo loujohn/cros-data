@@ -10,14 +10,13 @@
 
 <body>
     <p>client</p>
+    <script src="./cros-data.umd.js" type="text/javascript" language="javascript"></script>
+    <script type="text/javascript" language="javascript">
+        var client = new crosData.Client("http://0.0.0.0:10002/hub.html")
+        client.set("token", 1234).then(function (res) {
+            console.log(res)
+        })
+    </script>
 </body>
-<script src="./cros-data.umd.js"></script>
-<script>
-    let client = new crosData.Client("http://localhost:10002/hub.html")
-    client.set("token", 1234).then((res) => {
-        console.log(res)
-        console.log(124)
-    })
-</script>
 
 </html>

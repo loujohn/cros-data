@@ -1,9 +1,12 @@
-import typescript from "rollup-plugin-typescript";
+import typescript from "rollup-plugin-typescript2";
 import babel from "rollup-plugin-babel";
 import livereload from "rollup-plugin-livereload";
 import serve from "rollup-plugin-serve";
 import { terser } from "rollup-plugin-terser";
 import json from "rollup-plugin-json";
+import commonjs from "rollup-plugin-commonjs";
+
+import { DEFAULT_EXTENSIONS } from "@babel/core";
 
 import replace from "rollup-plugin-replace";
 import { version } from "../package.json";
@@ -16,16 +19,19 @@ const resolveFile = function(filePath) {
 const env = process.env.NODE_ENV;
 const basePlugins = [
   json(),
+  replace({
+    exclude: "node_modules/**",
+    VERSION: version
+  }),
   typescript({
     exclude: "node_modules/**"
   }),
   babel({
-    exclude: "node_modules/**"
-  }),
-  replace({
     exclude: "node_modules/**",
-    VERSION: version
-  })
+    runtimeHelpers: true,
+    extensions: [...DEFAULT_EXTENSIONS, ".ts"]
+  }),
+  commonjs()
 ];
 const prodPlugins = [terser()];
 const devPlugins = [
@@ -43,7 +49,7 @@ const devPlugins = [
     // Multiple folders to serve from
     contentBase: ["dist", "example"],
     // Options used in setting up server
-    host: "localhost",
+    host: "0.0.0.0",
     port: 10001
   }),
   serve({
@@ -57,7 +63,7 @@ const devPlugins = [
     // Multiple folders to serve from
     contentBase: ["dist", "example"],
     // Options used in setting up server
-    host: "localhost",
+    host: "0.0.0.0",
     port: 10002
   })
 ];
