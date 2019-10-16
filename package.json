@@ -5,7 +5,7 @@
   "browser": "dist/cros-data.umd.js",
   "main": "dist/cros-data.umd.js",
   "module": "dist/cros-data.es.js",
-  "types": "dist/crosData.d.ts",
+  "types": "types/crosData.d.ts",
   "scripts": {
     "build": "./node_modules/rollup/dist/bin/rollup -c ./build/rollup.config.js --environment NODE_ENV:prod",
     "dev": "./node_modules/rollup/dist/bin/rollup --watch -c ./build/rollup.config.js --environment NODE_ENV:development"

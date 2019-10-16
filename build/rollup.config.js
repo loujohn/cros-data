@@ -24,7 +24,8 @@ const basePlugins = [
     VERSION: version
   }),
   typescript({
-    exclude: "node_modules/**"
+    exclude: "node_modules/**",
+    useTsconfigDeclarationDir: true
   }),
   babel({
     exclude: "node_modules/**",
