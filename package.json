@@ -10,7 +10,7 @@
     "build": "./node_modules/rollup/dist/bin/rollup -c ./build/rollup.config.js --environment NODE_ENV:prod",
     "dev": "./node_modules/rollup/dist/bin/rollup --watch -c ./build/rollup.config.js --environment NODE_ENV:development",
     "docs": "vuepress dev docs",
-    "docs:build": "vuepress build docs"
+    "docs:build": "vuepress build docs && cp -rf ./docs/.vuepress/dist/* ./docs && rm -r ./docs/.vuepress/dist"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
+    "core-js": "^2.6.10",
     "rollup": "^1.23.1",
     "rollup-plugin-babel": "^4.3.3",
     "rollup-plugin-commonjs": "^10.1.0",
@@ -40,7 +41,6 @@
     "vuepress": "^1.2.0"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.6.0",
-    "core-js": "^3.3.2"
+    "@babel/polyfill": "^7.6.0"
   }
 }
