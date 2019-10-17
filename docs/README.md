@@ -1,4 +1,16 @@
-# cros-data
+---
+home: true
+actionText: 开始使用 →
+actionLink: /readme
+footer: ISC Licensed | Copyright © 2019-present LouJohn
+features:
+  - title: TypeScript
+    details: TypeScript编写
+  - title: Promise支持
+    details: promise
+  - title: 支持权限配置
+    details: 支持权限配置
+---
 
 跨域共享 LocalStorage，采用 TypeScript 编写，支持权限控制、Promise 化接口。
 
