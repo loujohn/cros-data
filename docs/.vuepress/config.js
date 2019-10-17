@@ -1,5 +1,6 @@
 module.exports = {
   title: "cors-data",
+  base: "/cros-data/",
   description: "一个跨域共享localstorage的库，API支持Promise，支持权限配置",
   themeConfig: {
     nav: [
