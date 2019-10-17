@@ -1,6 +1,6 @@
 {
   "name": "cros-data",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "cross domian localstorage",
   "browser": "dist/cros-data.umd.js",
   "main": "dist/cros-data.umd.js",
