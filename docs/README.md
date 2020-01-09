@@ -1,7 +1,7 @@
 ---
 home: true
 actionText: 开始使用 →
-actionLink: /readme
+actionLink: /guige
 footer: ISC Licensed | Copyright © 2019-present LouJohn
 features:
   - title: TypeScript
